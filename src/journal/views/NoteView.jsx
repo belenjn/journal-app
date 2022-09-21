@@ -10,7 +10,7 @@ export const NoteView = () => {
       direction="row"
       justifyContent="space-between"
       alignItems="center"
-      sx={{ mb: 1 }}
+      sx={{ mb: 1}}
     >
       <Grid item>
         <Typography fontSize={39} fontWeight="light">
@@ -49,7 +49,7 @@ export const NoteView = () => {
       </Grid>
 
       <ImageGallery/>
-      
+
     </Grid>
   );
 };

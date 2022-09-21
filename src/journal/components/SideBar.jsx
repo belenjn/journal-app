@@ -28,8 +28,9 @@ export const SideBar = ({ drawerWidth = 240 }) => {
         open
         sx={{
           display: { xs: "block" },
-          backgroundColor: "rgba(255, 255, 255, 0)",
-          "& .MuiDrawer-paper": { boxSizing: "border-box", width: drawerWidth },          
+          "& .MuiDrawer-paper": { boxSizing: "border-box", width: drawerWidth },
+
+          
         }}
       >
         <Toolbar>
