@@ -10,3 +10,8 @@
 .css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop {
    background-color: rgba(255, 255, 255, 0) !important;
 }
+
+.css-sa0nw4-MuiModal-root-MuiDrawer-root {
+border: 1px solid red !important;
+z-index: -2 !important;
+}

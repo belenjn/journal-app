@@ -10,7 +10,7 @@ export const NoteView = () => {
       direction="row"
       justifyContent="space-between"
       alignItems="center"
-      sx={{ mb: 1}}
+      sx={{ mb: 2}}
     >
       <Grid item>
         <Typography fontSize={39} fontWeight="light">
@@ -45,6 +45,8 @@ export const NoteView = () => {
           multiline
           placeholder="¿Qué sucedió en el día de hoy?"
           minRows={5}
+          sx={{ border: "none", mb: 1 }}
+
         />
       </Grid>
 

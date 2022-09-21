@@ -12,5 +12,9 @@ export const purpleTheme = createTheme({
     error: {
       main: red.A400,
     },
+    third:{
+      main: "#7652B7",
+      hover: "#e8d8fb"
+    }
   },
 });
