@@ -16,9 +16,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 export const SideBar = ({ drawerWidth = 240 }) => {
-
-  const {displayName} = useSelector(state => state.auth);
-
+  const { displayName } = useSelector((state) => state.auth);
 
   return (
     <Box
@@ -34,8 +32,6 @@ export const SideBar = ({ drawerWidth = 240 }) => {
         sx={{
           display: { xs: "block" },
           "& .MuiDrawer-paper": { boxSizing: "border-box", width: drawerWidth },
-
-          
         }}
       >
         <Toolbar>
