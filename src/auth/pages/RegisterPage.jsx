@@ -1,5 +1,12 @@
 import { Link as RouterLink } from "react-router-dom";
-import { Alert, Button, Grid, Link, TextField, Typography } from "@mui/material";
+import {
+  Alert,
+  Button,
+  Grid,
+  Link,
+  TextField,
+  Typography,
+} from "@mui/material";
 import React, { useMemo, useState } from "react";
 import { AuthLayout } from "../layout/AuthLayout";
 import { useForm } from "../../hooks/useForm";
@@ -123,12 +130,8 @@ export const RegisterPage = () => {
               mt: 1,
             }}
           >
-            <Grid 
-            item 
-            xs={12}
-            display={!!errorMessage ? '' : 'none'}
-            >
-             <Alert severity="error">{errorMessage}</Alert>
+            <Grid item xs={12} display={!!errorMessage ? "" : "none"}>
+              <Alert severity="error">{errorMessage}</Alert>
             </Grid>
             <Grid item xs={12}>
               <Button
