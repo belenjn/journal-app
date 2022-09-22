@@ -6,11 +6,12 @@ import { ImageGallery } from "../components/ImageGallery";
 export const NoteView = () => {
   return (
     <Grid
+      className="animate__animated animate__fadeIn animate__faster"
       container
       direction="row"
       justifyContent="space-between"
       alignItems="center"
-      sx={{ mb: 2}}
+      sx={{ mb: 2 }}
     >
       <Grid item>
         <Typography fontSize={39} fontWeight="light">
@@ -46,12 +47,10 @@ export const NoteView = () => {
           placeholder="¿Qué sucedió en el día de hoy?"
           minRows={5}
           sx={{ border: "none", mb: 1 }}
-
         />
       </Grid>
 
-      <ImageGallery/>
-
+      <ImageGallery />
     </Grid>
   );
 };
