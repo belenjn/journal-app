@@ -1,13 +1,13 @@
 import { Link as RouterLink } from "react-router-dom";
 import { Button, Grid, Link, TextField, Typography } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { AuthLayout } from "../layout/AuthLayout";
 import { useForm } from "../../hooks/useForm";
 
 const formData = {
-  email: "email@gmail.com",
-  password: "123456",
-  displayName: "Belén Jaraba",
+  email: "",
+  password: "",
+  displayName: "",
 };
 
 const formValidations = {
@@ -20,6 +20,8 @@ const formValidations = {
 };
 
 export const RegisterPage = () => {
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
   const {
     email,
     password,
@@ -32,9 +34,9 @@ export const RegisterPage = () => {
     displayNameValid,
   } = useForm(formData, formValidations);
 
-
   const onSubmit = (e) => {
     e.preventDefault();
+    setFormSubmitted(true);
     console.log(formState);
   };
 
@@ -55,9 +57,8 @@ export const RegisterPage = () => {
               placeholder="Nombre completo"
               fullWidth
               name="displayName"
-              value={displayName}
               onChange={onInputChange}
-              error={!displayNameValid}
+              error={!!displayNameValid && formSubmitted}
               helperText={displayNameValid}
             />
           </Grid>
@@ -75,8 +76,9 @@ export const RegisterPage = () => {
               placeholder="correo@google.com"
               fullWidth
               name="email"
-              value={email}
               onChange={onInputChange}
+              error={!!emailValid && formSubmitted}
+              helperText={emailValid}
             />
           </Grid>
 
@@ -93,8 +95,9 @@ export const RegisterPage = () => {
               placeholder="Contraseña"
               fullWidth
               name="password"
-              value={password}
               onChange={onInputChange}
+              error={!!passwordValid && formSubmitted}
+              helperText={passwordValid}
             />
           </Grid>
 
@@ -107,7 +110,11 @@ export const RegisterPage = () => {
             }}
           >
             <Grid item xs={12}>
-              <Button variant="contained" fullWidth type="submit">
+              <Button
+                variant="contained"
+                fullWidth
+                type="submit"
+              >
                 Crear cuenta
               </Button>
             </Grid>
