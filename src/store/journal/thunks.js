@@ -4,8 +4,6 @@ import { addNewEmptyNote, savingNewNote, setActiveNote } from "./journalSlice";
 
 export const startNewNote = () => {
   return async (dispatch, getState) => {
-
-
     dispatch(savingNewNote());
 
     const { uid } = getState().auth;
@@ -24,5 +22,12 @@ export const startNewNote = () => {
 
     dispatch(addNewEmptyNote(newNote));
     dispatch(setActiveNote(newNote));
+  };
+};
+
+export const startLoadingNotes = () => {
+  return async (dispatch, getState) => {
+    const { uid } = getState().auth;
+    console.log(uid)
   };
 };
