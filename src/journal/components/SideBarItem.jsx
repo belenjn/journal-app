@@ -2,9 +2,9 @@ import { TurnedInNot } from '@mui/icons-material'
 import { Grid, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
 import React from 'react'
 
-export const SideBarItem = () => {
+export const SideBarItem = ({note}) => {
   return (
-    <ListItem key={note.id} disablePadding>
+    <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
                   <TurnedInNot />
