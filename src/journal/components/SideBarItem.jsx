@@ -1,23 +1,31 @@
-import { TurnedInNot } from '@mui/icons-material'
-import { Grid, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
-import React from 'react'
+import { TurnedInNot } from "@mui/icons-material";
+import {
+  Grid,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+} from "@mui/material";
+import React, { useMemo } from "react";
 
-export const SideBarItem = ({note}) => {
+export const SideBarItem = ({ title, body, id }) => {
+  const newTitle = useMemo(() => {
+    return title.length > 17
+    ? title.substring(0, 17) + '...'
+    : title;
+  }, [title]);
+
   return (
     <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <TurnedInNot />
-                </ListItemIcon>
-                <Grid container>
-                  <ListItemText primary={note.title} />
-                  <ListItemText
-                    secondary={
-                      "Magna tempor culpa laborum aute excepteur ex dolor nisi veniam duis pariatur sit proident ipsum."
-                    }
-                  />
-                </Grid>
-              </ListItemButton>
-            </ListItem>
-  )
-}
+      <ListItemButton>
+        <ListItemIcon>
+          <TurnedInNot />
+        </ListItemIcon>
+        <Grid container>
+          <ListItemText primary={newTitle} />
+          <ListItemText secondary={body} />
+        </Grid>
+      </ListItemButton>
+    </ListItem>
+  );
+};
