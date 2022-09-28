@@ -1,16 +1,19 @@
- * {
+* {
   margin: 0;
   padding: 0;
- }
-
- .box-shadow {
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
- }
-
-.css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop {
-   background-color: rgba(255, 255, 255, 0) !important;
 }
 
-/* .css-sa0nw4-MuiModal-root-MuiDrawer-root {
-z-index: -4 !important;
-} */
+.box-shadow {
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop {
+   display: none !important;
+}
+
+.css-sa0nw4-MuiModal-root-MuiDrawer-root {
+  width: 240px;
+
+}
+
+

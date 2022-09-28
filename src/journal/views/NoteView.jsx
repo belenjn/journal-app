@@ -1,9 +1,21 @@
 import { SaveOutlined } from "@mui/icons-material";
 import { Button, Grid, TextField, Typography } from "@mui/material";
-import React from "react";
+import React, { useMemo } from "react";
+import { useSelector } from "react-redux";
+import { useForm } from "../../hooks/useForm";
 import { ImageGallery } from "../components/ImageGallery";
 
 export const NoteView = () => {
+  const { active } = useSelector((state) => state.journal);
+
+  const { body, title, onInputChange, date, formState } = useForm(active);
+
+  const dateString = useMemo(() => {
+    const newDate = new Date(date);
+
+    return newDate.toUTCString();
+  }, [date]);
+
   return (
     <Grid
       className="animate__animated animate__fadeIn animate__faster"
@@ -15,7 +27,7 @@ export const NoteView = () => {
     >
       <Grid item>
         <Typography fontSize={39} fontWeight="light">
-          29 de agosto de 2023
+          {dateString}
         </Typography>
       </Grid>
       <Grid item>
@@ -37,6 +49,9 @@ export const NoteView = () => {
           placeholder="Ingrese un título"
           label="Título"
           sx={{ border: "none", mb: 1 }}
+          name="title"
+          value={title}
+          onChange={onInputChange}
         />
 
         <TextField
@@ -47,6 +62,9 @@ export const NoteView = () => {
           placeholder="¿Qué sucedió en el día de hoy?"
           minRows={5}
           sx={{ border: "none", mb: 1 }}
+          name="body"
+          value={body}
+          onChange={onInputChange}
         />
       </Grid>
 
