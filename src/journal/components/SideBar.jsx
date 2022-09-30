@@ -29,7 +29,7 @@ export const SideBar = ({ drawerWidth = 240 }) => {
       }}
     >
       <Drawer
-        varinat="permanent"
+        variant="permanent"
         open
         sx={{
           display: { xs: "block" },
