@@ -26,7 +26,7 @@ export const journalSlice = createSlice({
     },
     setSaving: (state) => {
       state.isSaving = true;
-      state.messageSaved = '';c
+      state.messageSaved = '';
     },
     noteUpdated: (state, action) => {
       state.isSaving = false;
